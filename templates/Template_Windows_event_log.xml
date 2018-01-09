@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export version="1.0" date="15.01.11" time="03.06">
+  <hosts>
+    <host name="Windows Logging">
+      <proxy_hostid>0</proxy_hostid>
+      <useip>1</useip>
+      <dns></dns>
+      <ip>127.0.0.1</ip>
+      <port>10050</port>
+      <status>3</status>
+      <useipmi>0</useipmi>
+      <ipmi_ip>127.0.0.1</ipmi_ip>
+      <ipmi_port>623</ipmi_port>
+      <ipmi_authtype>0</ipmi_authtype>
+      <ipmi_privilege>2</ipmi_privilege>
+      <ipmi_username></ipmi_username>
+      <ipmi_password></ipmi_password>
+      <groups>
+        <group>Templates</group>
+      </groups>
+      <triggers>
+        <trigger>
+          <description>Application Log INFORMATION</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[Application].logseverity(0)}=1</expression>
+          <url></url>
+          <status>1</status>
+          <priority>1</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>Application Log WARNING</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[Application].logseverity(0)}=2</expression>
+          <url></url>
+          <status>0</status>
+          <priority>2</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>Application Log ERROR</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[Application].logseverity(0)}=4</expression>
+          <url></url>
+          <status>0</status>
+          <priority>4</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>Application Log SECURITY</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[Application].logseverity(8)}=8</expression>
+          <url></url>
+          <status>1</status>
+          <priority>0</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>Directory Service Log INFORMATION</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[Directory Service].logseverity(0)}=1</expression>
+          <url></url>
+          <status>1</status>
+          <priority>1</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>Directory Service Log WARNING</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[Directory Service].logseverity(0)}=2</expression>
+          <url></url>
+          <status>0</status>
+          <priority>2</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>Directory Service Log ERROR</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[Directory Service].logseverity(0)}=4</expression>
+          <url></url>
+          <status>0</status>
+          <priority>4</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>Directory Service Log SECURITY</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[Directory Service].logseverity(8)}=8</expression>
+          <url></url>
+          <status>1</status>
+          <priority>0</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>File Replication Service Log INFORMATION</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[File Replication Service].logseverity(0)}=1</expression>
+          <url></url>
+          <status>1</status>
+          <priority>1</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>File Replication Service Log WARNING</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[File Replication Service].logseverity(0)}=2</expression>
+          <url></url>
+          <status>0</status>
+          <priority>2</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>File Replication Service Log ERROR</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[File Replication Service].logseverity(0)}=4</expression>
+          <url></url>
+          <status>0</status>
+          <priority>4</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>File Replication Service Log SECURITY</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[File Replication Service].logseverity(8)}=8</expression>
+          <url></url>
+          <status>1</status>
+          <priority>0</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>Security Log INFORMATION</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[Security].logseverity(0)}=1</expression>
+          <url></url>
+          <status>1</status>
+          <priority>1</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>Security Log WARNING</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[Security].logseverity(0)}=2</expression>
+          <url></url>
+          <status>0</status>
+          <priority>2</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>Security Log ERROR</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[Security].logseverity(0)}=4</expression>
+          <url></url>
+          <status>0</status>
+          <priority>4</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>Security Log SECURITY</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[Security].logseverity(8)}=8</expression>
+          <url></url>
+          <status>1</status>
+          <priority>0</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>System Log INFORMATION</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[System].logseverity(0)}=1</expression>
+          <url></url>
+          <status>1</status>
+          <priority>1</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>System Log WARNING</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[System].logseverity(0)}=2</expression>
+          <url></url>
+          <status>0</status>
+          <priority>2</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>System Log ERROR</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[System].logseverity(0)}=4</expression>
+          <url></url>
+          <status>0</status>
+          <priority>4</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>System Log SECURITY</description>
+          <type>0</type>
+          <expression>{Windows Logging:eventlog[System].logseverity(8)}=8</expression>
+          <url></url>
+          <status>1</status>
+          <priority>0</priority>
+          <comments></comments>
+        </trigger>
+      </triggers>
+      <items>
+        <item type="7" key="eventlog[Application]" value_type="2">
+          <description>Application Log</description>
+          <ipmi_sensor></ipmi_sensor>
+          <delay>30</delay>
+          <history>90</history>
+          <trends>365</trends>
+          <status>0</status>
+          <data_type>0</data_type>
+          <units></units>
+          <multiplier>0</multiplier>
+          <delta>0</delta>
+          <formula>1</formula>
+          <lastlogsize>0</lastlogsize>
+          <logtimefmt></logtimefmt>
+          <delay_flex></delay_flex>
+          <authtype>0</authtype>
+          <username></username>
+          <password></password>
+          <publickey></publickey>
+          <privatekey></privatekey>
+          <params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+          <trapper_hosts></trapper_hosts>
+          <snmp_community>public</snmp_community>
+          <snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+          <snmp_port>161</snmp_port>
+          <snmpv3_securityname></snmpv3_securityname>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authpassphrase></snmpv3_authpassphrase>
+          <snmpv3_privpassphrase></snmpv3_privpassphrase>
+          <applications>
+            <application>Windows_Logs</application>
+          </applications>
+        </item>
+        <item type="7" key="eventlog[Directory Service]" value_type="2">
+          <description>Directory Service Log</description>
+          <ipmi_sensor></ipmi_sensor>
+          <delay>30</delay>
+          <history>90</history>
+          <trends>365</trends>
+          <status>0</status>
+          <data_type>0</data_type>
+          <units></units>
+          <multiplier>0</multiplier>
+          <delta>0</delta>
+          <formula>1</formula>
+          <lastlogsize>0</lastlogsize>
+          <logtimefmt></logtimefmt>
+          <delay_flex></delay_flex>
+          <authtype>0</authtype>
+          <username></username>
+          <password></password>
+          <publickey></publickey>
+          <privatekey></privatekey>
+          <params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+          <trapper_hosts></trapper_hosts>
+          <snmp_community>public</snmp_community>
+          <snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+          <snmp_port>161</snmp_port>
+          <snmpv3_securityname></snmpv3_securityname>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authpassphrase></snmpv3_authpassphrase>
+          <snmpv3_privpassphrase></snmpv3_privpassphrase>
+          <applications>
+            <application>Windows_Logs</application>
+          </applications>
+        </item>
+        <item type="7" key="eventlog[File Replication Service]" value_type="2">
+          <description>File Replication Service Log</description>
+          <ipmi_sensor></ipmi_sensor>
+          <delay>30</delay>
+          <history>90</history>
+          <trends>365</trends>
+          <status>0</status>
+          <data_type>0</data_type>
+          <units></units>
+          <multiplier>0</multiplier>
+          <delta>0</delta>
+          <formula>1</formula>
+          <lastlogsize>0</lastlogsize>
+          <logtimefmt></logtimefmt>
+          <delay_flex></delay_flex>
+          <authtype>0</authtype>
+          <username></username>
+          <password></password>
+          <publickey></publickey>
+          <privatekey></privatekey>
+          <params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+          <trapper_hosts></trapper_hosts>
+          <snmp_community>public</snmp_community>
+          <snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+          <snmp_port>161</snmp_port>
+          <snmpv3_securityname></snmpv3_securityname>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authpassphrase></snmpv3_authpassphrase>
+          <snmpv3_privpassphrase></snmpv3_privpassphrase>
+          <applications>
+            <application>Windows_Logs</application>
+          </applications>
+        </item>
+        <item type="7" key="eventlog[Security]" value_type="2">
+          <description>Security Log</description>
+          <ipmi_sensor></ipmi_sensor>
+          <delay>30</delay>
+          <history>90</history>
+          <trends>365</trends>
+          <status>0</status>
+          <data_type>0</data_type>
+          <units></units>
+          <multiplier>0</multiplier>
+          <delta>0</delta>
+          <formula>1</formula>
+          <lastlogsize>0</lastlogsize>
+          <logtimefmt></logtimefmt>
+          <delay_flex></delay_flex>
+          <authtype>0</authtype>
+          <username></username>
+          <password></password>
+          <publickey></publickey>
+          <privatekey></privatekey>
+          <params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+          <trapper_hosts></trapper_hosts>
+          <snmp_community>public</snmp_community>
+          <snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+          <snmp_port>161</snmp_port>
+          <snmpv3_securityname></snmpv3_securityname>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authpassphrase></snmpv3_authpassphrase>
+          <snmpv3_privpassphrase></snmpv3_privpassphrase>
+          <applications>
+            <application>Windows_Logs</application>
+          </applications>
+        </item>
+        <item type="7" key="eventlog[System]" value_type="2">
+          <description>System Log</description>
+          <ipmi_sensor></ipmi_sensor>
+          <delay>30</delay>
+          <history>90</history>
+          <trends>365</trends>
+          <status>0</status>
+          <data_type>0</data_type>
+          <units></units>
+          <multiplier>0</multiplier>
+          <delta>0</delta>
+          <formula>1</formula>
+          <lastlogsize>0</lastlogsize>
+          <logtimefmt></logtimefmt>
+          <delay_flex></delay_flex>
+          <authtype>0</authtype>
+          <username></username>
+          <password></password>
+          <publickey></publickey>
+          <privatekey></privatekey>
+          <params>DSN=&lt;database source name&gt;\nuser=&lt;user name&gt;\npassword=&lt;password&gt;\nsql=&lt;query&gt;</params>
+          <trapper_hosts></trapper_hosts>
+          <snmp_community>public</snmp_community>
+          <snmp_oid>interfaces.ifTable.ifEntry.ifInOctets.1</snmp_oid>
+          <snmp_port>161</snmp_port>
+          <snmpv3_securityname></snmpv3_securityname>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authpassphrase></snmpv3_authpassphrase>
+          <snmpv3_privpassphrase></snmpv3_privpassphrase>
+          <applications>
+            <application>Windows_Logs</application>
+          </applications>
+        </item>
+      </items>
+      <templates/>
+      <graphs/>
+      <macros/>
+    </host>
+  </hosts>
+  <dependencies/>
+</zabbix_export>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export version="1.0" date="16.02.11" time="10.52">
+  <hosts>
+    <host name="Template_zext_ssl_cert">
+      <proxy_hostid>0</proxy_hostid>
+      <useip>1</useip>
+      <dns></dns>
+      <ip>127.0.0.1</ip>
+      <port>10050</port>
+      <status>3</status>
+      <useipmi>0</useipmi>
+      <ipmi_ip>127.0.0.1</ipmi_ip>
+      <ipmi_port>623</ipmi_port>
+      <ipmi_authtype>0</ipmi_authtype>
+      <ipmi_privilege>2</ipmi_privilege>
+      <ipmi_username></ipmi_username>
+      <ipmi_password></ipmi_password>
+      <groups>
+        <group>Templates</group>
+      </groups>
+      <triggers>
+        <trigger>
+          <description>SSL certificate on {HOSTNAME} expired</description>
+          <type>0</type>
+          <expression>{Template_zext_ssl_cert:zext_ssl_cert.sh[{$SSL_PORT}].last(0)}&lt;0</expression>
+          <url></url>
+          <status>0</status>
+          <priority>5</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>SSL certificate on {HOSTNAME} expires in less than 7 days ({ITEM.VALUE} days remaining)</description>
+          <type>0</type>
+          <expression>{Template_zext_ssl_cert:zext_ssl_cert.sh[{$SSL_PORT}].last(0)}&lt;7</expression>
+          <url></url>
+          <status>0</status>
+          <priority>4</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>SSL certificate on {HOSTNAME} expires in less than 15 days ({ITEM.VALUE} days remaining)</description>
+          <type>0</type>
+          <expression>{Template_zext_ssl_cert:zext_ssl_cert.sh[{$SSL_PORT}].last(0)}&lt;15</expression>
+          <url></url>
+          <status>0</status>
+          <priority>3</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>SSL certificate on {HOSTNAME} expires in less than 30 days ({ITEM.VALUE} days remaining)</description>
+          <type>0</type>
+          <expression>{Template_zext_ssl_cert:zext_ssl_cert.sh[{$SSL_PORT}].last(0)}&lt;30</expression>
+          <url></url>
+          <status>0</status>
+          <priority>2</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>SSL certificate on {HOSTNAME} expires in less than 60 days ({ITEM.VALUE} days remaining)</description>
+          <type>0</type>
+          <expression>{Template_zext_ssl_cert:zext_ssl_cert.sh[{$SSL_PORT}].last(0)}&lt;60</expression>
+          <url></url>
+          <status>0</status>
+          <priority>1</priority>
+          <comments></comments>
+        </trigger>
+        <trigger>
+          <description>SSL certificate on {HOSTNAME} expires in less than 90 days ({ITEM.VALUE} days remaining)</description>
+          <type>0</type>
+          <expression>{Template_zext_ssl_cert:zext_ssl_cert.sh[{$SSL_PORT}].last(0)}&lt;90</expression>
+          <url></url>
+          <status>0</status>
+          <priority>0</priority>
+          <comments></comments>
+        </trigger>
+      </triggers>
+      <items>
+        <item type="10" key="zext_ssl_cert.sh[{$SSL_PORT}]" value_type="0">
+          <description>SSL certificate validity</description>
+          <ipmi_sensor></ipmi_sensor>
+          <delay>86400</delay>
+          <history>90</history>
+          <trends>365</trends>
+          <status>0</status>
+          <data_type>0</data_type>
+          <units>days</units>
+          <multiplier>0</multiplier>
+          <delta>0</delta>
+          <formula>0</formula>
+          <lastlogsize>0</lastlogsize>
+          <logtimefmt></logtimefmt>
+          <delay_flex></delay_flex>
+          <authtype>0</authtype>
+          <username></username>
+          <password></password>
+          <publickey></publickey>
+          <privatekey></privatekey>
+          <params></params>
+          <trapper_hosts>localhost</trapper_hosts>
+          <snmp_community></snmp_community>
+          <snmp_oid></snmp_oid>
+          <snmp_port>161</snmp_port>
+          <snmpv3_securityname></snmpv3_securityname>
+          <snmpv3_securitylevel>0</snmpv3_securitylevel>
+          <snmpv3_authpassphrase></snmpv3_authpassphrase>
+          <snmpv3_privpassphrase></snmpv3_privpassphrase>
+          <applications>
+            <application>SSL certificate</application>
+          </applications>
+        </item>
+      </items>
+      <templates/>
+      <graphs/>
+      <macros>
+        <macro>
+          <value>443</value>
+          <name>{$SSL_PORT}</name>
+        </macro>
+      </macros>
+    </host>
+  </hosts>
+  <dependencies>
+    <dependency description="Template_zext_ssl_cert:SSL certificate on {HOSTNAME} expires in less than 7 days ({ITEM.VALUE} days remaining)">
+      <depends>Template_zext_ssl_cert:SSL certificate on {HOSTNAME} expired</depends>
+    </dependency>
+    <dependency description="Template_zext_ssl_cert:SSL certificate on {HOSTNAME} expires in less than 15 days ({ITEM.VALUE} days remaining)">
+      <depends>Template_zext_ssl_cert:SSL certificate on {HOSTNAME} expires in less than 7 days ({ITEM.VALUE} days remaining)</depends>
+    </dependency>
+    <dependency description="Template_zext_ssl_cert:SSL certificate on {HOSTNAME} expires in less than 30 days ({ITEM.VALUE} days remaining)">
+      <depends>Template_zext_ssl_cert:SSL certificate on {HOSTNAME} expires in less than 15 days ({ITEM.VALUE} days remaining)</depends>
+    </dependency>
+    <dependency description="Template_zext_ssl_cert:SSL certificate on {HOSTNAME} expires in less than 60 days ({ITEM.VALUE} days remaining)">
+      <depends>Template_zext_ssl_cert:SSL certificate on {HOSTNAME} expires in less than 30 days ({ITEM.VALUE} days remaining)</depends>
+    </dependency>
+    <dependency description="Template_zext_ssl_cert:SSL certificate on {HOSTNAME} expires in less than 90 days ({ITEM.VALUE} days remaining)">
+      <depends>Template_zext_ssl_cert:SSL certificate on {HOSTNAME} expires in less than 60 days ({ITEM.VALUE} days remaining)</depends>
+    </dependency>
+  </dependencies>
+</zabbix_export>
