@@ -1,0 +1,81 @@
+#!/bin/bash
+SHELL=/bin/bash
+PATH=/usr/lib64/qt-3.3/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
+
+    now=`date +"%m_%d_%Y"`
+
+    #Email configuration
+    RECIPIENT="zabbixmonitoring@gmail.com"
+
+    #File destination
+    BK_DEST=/opt/zabbix_backup
+    FINAL=/opt/final_backup
+    ZABBIX_DUMP="zabbix-master-${now}-full-backup.sql"
+    BK_NAME="zabbix-master-full-backup-${now}.tar.gz"
+
+    #Database configuration
+    DBSERVER=127.0.0.1
+    DATABASE=zabbix_master
+    DBUSER=root
+    DBPASS=
+
+    #Email configuration
+    RECIPIENT="zabbixmonitoring@gmail.com"
+
+case $1 in
+--force)
+;;
+*)
+
+if [ -f ${BK_DEST}/${BK_NAME} ]; then
+    echo "Backup $BK_NAME exist!"
+    exit 1
+fi;;
+
+esac
+
+find "$BK_DEST" -mtime +30 -exec rm -rf {} \;
+
+if [ $? -eq 0 ]
+then
+printf "\nDone files older than 30 days has been removed from $BK_DEST"
+
+else
+
+  printf "\nNo files to remove in $BK_DEST"
+
+fi
+
+    # zabbix full backup
+    mysqldump --opt --user=${DBUSER} --password=${DBPASS} ${DATABASE} > "$BK_DEST/${ZABBIX_DUMP}"
+
+if [ $? -eq 0 ]
+then
+printf "\nDone Full backup  has been saved in $BK_DEST/$ZABBIX_DUMP\n"
+
+else
+
+  echo "Zabbix full backup error" | mail -s "ERROR: Zabbix database full backup $date"  $RECIPIENT
+
+fi
+
+
+
+rm -rf ${BK_DEST}/${BK_NAME}
+tar czpf ${BK_DEST}/${BK_NAME} ${BK_DEST}/${ZABBIX_DUMP}
+
+if [ $? -eq 0 ]
+then
+echo -e "Success\n\n" `du -hs $BK_DEST/${BK_NAME}` | mail -s "OK: Zabbix full backup $date"  $RECIPIENT
+
+rm -rf ${BK_DEST}/${ZABBIX_DUMP}
+cp ${BK_DEST}/${BK_NAME} ${FINAL}
+rm -rf ${BK_DEST}/${BK_NAME}
+
+else
+
+  echo "Zabbix full backup error" | mail -s "ERROR: Zabbix full backup $date"  $RECIPIENT
+
+fi
+
+
