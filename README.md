@@ -1,0 +1,64 @@
+# Zabbix-Stuff
+
+## List:
+
+- [ ] **Scripts**
+  - [ ] apache.sh
+  - [ ] backup_zabbix_config
+  - [ ] check_zabbix.sh
+  - [ ] check_zabbix_java_gateway.sh
+  - [ ] zabbix-full-backup
+  - [ ] zabbix_backup.sh
+- [ ] **Templates**
+  - [ ] Template_App_Agentless.xml
+  - [ ] Template_App_Apache.xml
+  - [ ] Template_App_MySQL.xml
+  - [ ] Template_App_Zabbix_Agent.xml
+  - [ ] Template_App_Zabbix_Server.xml
+  - [ ] Template_Cacti_JBoss.xml
+  - [ ] Template_Cisco_ASA.xml
+  - [ ] Template_DomainCheck.xml
+  - [ ] Template_Exchange_2013.xml
+  - [ ] Template_Gandi.xml
+  - [ ] Template_IPMI_Intel_SR1530.xml
+  - [ ] Template_IPMI_Intel_SR1630.xml
+  - [ ] Template_JMX_Generic.xml
+  - [ ] Template_JMX_Tomcat.xml
+  - [ ] Template_Jboss-II.xml
+  - [ ] Template_Jboss.xml
+  - [ ] Template_Linux.xml
+  - [ ] Template_MySQL-II.xml
+  - [ ] Template_MySQL-III.xml
+  - [ ] Template_MySQL.xml
+  - [ ] Template_MySQL_Server.xml
+  - [ ] Template_OS_AIX.xml
+  - [ ] Template_OS_FreeBSD.xml
+  - [ ] Template_OS_HP-UX.xml
+  - [ ] Template_OS_Linux.xml
+  - [ ] Template_OS_Mac_OS_X.xml
+  - [ ] Template_OS_OpenBSD.xml
+  - [ ] Template_OS_Solaris.xml
+  - [ ] Template_OS_Windows.xml
+  - [ ] Template_PostgreSQL-II.xml
+  - [ ] Template_Postgresql.xml
+  - [ ] Template_SNMP_Device.xml
+  - [ ] Template_SNMP_Disks.xml
+  - [ ] Template_SNMP_Generic.xml
+  - [ ] Template_SNMP_Interfaces.xml
+  - [ ] Template_SNMP_OS_Linux.xml
+  - [ ] Template_SNMP_OS_Windows.xml
+  - [ ] Template_SNMP_Processors.xml
+  - [ ] Template_Windows_IIS.xml
+  - [ ] Template_Windows_MySQL.xml
+  - [ ] Template_Windows_event_log.xml
+  - [ ] Template_Windows_server_2008R2.xml
+  - [ ] Template_Zabbix_server.xml
+  - [ ] Template_Zorka_JBoss7_Ejb3Stateless.xml
+  - [ ] Template_Zorka_JBoss7_JpaPersistenceUnits.xml
+  - [ ] Template_Zorka_JBoss7_RequestProcessors.xml
+  - [ ] Template_Zorka_JBoss7_Servlets.xml
+  - [ ] Template_Zorka_JBoss7_Sessions.xml
+  - [ ] Template_zext_ssl_cert.xml
+- [ ] **Tools**
+  - [ ] SnmpBuilder
+  - [ ] ZabbixDynamicPdfReport
