@@ -64,3 +64,4 @@
 - [ ] **Tools**
   - [ ] SnmpBuilder
   - [ ] ZabbixDynamicPdfReport
+  - [ ] Monitoring MySQL cluster
