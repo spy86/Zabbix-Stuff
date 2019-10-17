@@ -15,7 +15,7 @@ password = P@ssw0rd_123
 
 chmod 640 /etc/zabbix/.my.cnf
 chown root:zabbix /etc/zabbix/.my.cnf
-
+```
 4. Restart Zabbix agent and test commands
 ```
 systemctl restart zabbix-agent
